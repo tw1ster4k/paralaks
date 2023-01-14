@@ -36,10 +36,12 @@ function windowLoad() {
     }
     setParallaxAnimationstyle();
 
-    const moon = document.querySelector('.moon');
+    const sun = document.querySelector('.sun');
+    const oblaka = document.querySelector('.oblaka');
     const buildings = document.querySelectorAll('.building')
-    const tree = document.querySelector('.tree')
+/*     const tree = document.querySelector('.tree') */
     const stairs = document.querySelector('.stairs')
+    const pineapple = document.querySelector('.pineapple')
     const train = document.querySelector('.train')
     const santaItems = document.querySelectorAll('.santa>*')
 
@@ -54,14 +56,24 @@ function windowLoad() {
         finalPos < 100 ? christmasAnimation(finalPos) : christmasAnimation(100)
     }
     function christmasAnimation(finalPos) {
-        const moonAnim = {
+        const sunAnim = {
             translate: 50 / 100 * finalPos,
             scale: 1 + 2/ 100 * finalPos
         }
-        moon.style.cssText = `
+        sun.style.cssText = `
             transform:
-                translate(0,${moonAnim.translate}%)
-                scale(${moonAnim.scale})
+                translate(0,${sunAnim.translate}%)
+                scale(${sunAnim.scale})
+        `;
+
+        const oblakaAnim = {
+            translate: 50 / 100 * finalPos,
+            scale: 1 + 2/ 100 * finalPos
+        }
+        oblaka.style.cssText = `
+            transform:
+                translate(0,${oblakaAnim.translate}%)
+                scale(${oblakaAnim.scale})
         `;
 
         const stairsAmin = {
@@ -73,8 +85,18 @@ function windowLoad() {
             translate(0,${stairsAmin.translate}%)
             scale(${stairsAmin.scale})
     `;
+    const pineappleAmin = {
+        translate: 70 / 100 * finalPos,
+        scale: 1 + 2/ 100 * finalPos
+    }
+    pineapple.style.cssText = `
+    transform:
+        translate(0,${pineappleAmin.translate}%)
+        scale(${pineappleAmin.scale})
+`;
 
-    const treeAmin = {
+
+/*     const treeAmin = {
         translate: 70 / 100 * finalPos,
         scale: 1 + 1.5/ 100 * finalPos
     }
@@ -82,7 +104,7 @@ function windowLoad() {
     transform:
         translate(0,${treeAmin.translate}%)
         scale(${treeAmin.scale})
-    `;
+    `; */
 
     buildings.forEach((building, index) => {
         const buildingAnim = {
